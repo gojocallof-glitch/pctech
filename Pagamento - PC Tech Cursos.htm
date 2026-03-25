@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagamento - PC Tech Cursos</title>
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #000;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #008000;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 255, 0, 0.3);
+    }
+
+    header h1 {
+      font-size: 28px;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .form-section {
+      max-width: 600px;
+      margin: 50px auto;
+      background-color: #111;
+      padding: 40px;
+      border-radius: 12px;
+      border: 2px solid #008000;
+      box-shadow: 0 0 20px rgba(0, 255, 0, 0.4);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .form-section h2 {
+      text-align: center;
+      color: #00ff00;
+      margin-bottom: 30px;
+      font-size: 24px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #00ff00;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 2px solid #00ff00;
+      border-radius: 6px;
+      background-color: #000;
+      color: #fff;
+      font-size: 16px;
+      transition: border-color 0.3s;
+    }
+
+    input:focus {
+      border-color: #00cc00;
+      outline: none;
+    }
+
+    input::placeholder {
+      color: #aaa;
+    }
+
+    .botao-pagamento {
+      width: 100%;
+      padding: 18px;
+      font-size: 20px;
+      font-weight: bold;
+      background: linear-gradient(45deg, #00ff00, #006400);
+      color: #000;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 0 10px #00ff00;
+    }
+
+    .botao-pagamento:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #00ff00;
+    }
+
+    .botao-pagamento:active {
+      transform: scale(0.98);
+    }
+
+    footer {
+      background-color: #008000;
+      text-align: center;
+      padding: 20px;
+      margin-top: 60px;
+      color: #fff;
+      font-size: 14px;
+      box-shadow: 0 -4px 8px rgba(0, 255, 0, 0.3);
+    }
+
+    /* Responsividade */
+    @media (max-width: 600px) {
+      .form-section {
+        padding: 20px;
+      }
+
+      .botao-pagamento {
+        font-size: 18px;
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>PC Tech Cursos Técnicos</h1>
+  </header>
+
+  <section class="form-section">
+    <h2>Finalizar Inscrição</h2>
+    <form>
+      <label for="nome">Nome Completo</label>
+      <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required="">
+
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required="">
+
+      <label for="telefone">Número de Telefone</label>
+      <input type="tel" id="telefone" name="telefone" placeholder="(DDD) 9XXXX-XXXX" required="">
+      <button type="submit" class="botao-pagamento">
+      <a href="http://127.0.0.1:5500/index.html/paymant.html" class="botao-pagamento">
+
+  Prosseguir com o PAGAMENTO
+
+</a>
+
+    
+    
+  </button></form></section>
+
+  <footer>
+    © 2026 PC Tech Cursos Técnicos. Todos os direitos reservados.
+  </footer>
+
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>
